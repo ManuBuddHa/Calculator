@@ -116,3 +116,7 @@ function decimal(){
    math.innerHTML=math.innerHTML+".";
    dot.disabled=true;
 }
+function backspace(){
+   let num=math.innerHTML;
+   math.innerHTML=num.substring(0,num.length-1);
+}
