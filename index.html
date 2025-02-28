@@ -13,36 +13,37 @@
       </section>
       <section class="calc">
          <div id="screen">
-            <h2 class="math">1+2</h2>
+            <h2 class="math"></h2>
+            <h2 class="op">|</h2>
          </div>
          <div id="buttons">
             <div class="row">
-               <button>Clear</button>
+               <button onclick="clr()">Clear</button>
                <button><img src="https://w7.pngwing.com/pngs/684/808/png-transparent-backspace-computer-icons-arrow-arrow-angle-text-rectangle.png" alt="<-" width="100%" height="75%"></button>
             </div>
             <div class="row">
-               <button>7</button>
-               <button>8</button>
-               <button>9</button>
-               <button>/</button>
+               <button onclick="btn7()">7</button>
+               <button onclick="btn8()">8</button>
+               <button onclick="btn9()">9</button>
+               <button onclick="divide()">÷</button>
             </div>
             <div class="row">
-               <button>4</button>
-               <button>5</button>
-               <button>6</button>
-               <button>x</button>
+               <button onclick="btn4()">4</button>
+               <button onclick="btn5()">5</button>
+               <button onclick="btn6()">6</button>
+               <button onclick="multiply()">x</button>
             </div>
             <div class="row">
-               <button>1</button>
-               <button>2</button>
-               <button>3</button>
-               <button>-</button>
+               <button onclick="btn1()">1</button>
+               <button onclick="btn2()">2</button>
+               <button onclick="btn3()">3</button>
+               <button onclick="subtract()">-</button>
             </div>
             <div class="row">
-               <button>0</button>
+               <button onclick="btn0()">0</button>
                <button>.</button>
-               <button>=</button>
-               <button>+</button>
+               <button onclick="equal()">=</button>
+               <button onclick="add()">+</button>
             </div>
          </div>
       </section>
