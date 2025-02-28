@@ -54,4 +54,7 @@ button{
    font-size: 24px;
    font-weight: bolder;
    border-radius: 5px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
