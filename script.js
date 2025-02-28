@@ -5,6 +5,7 @@ let val2=""; //2nd Value
 let op=""; //Operator
 let result="";
 let buttons=document.querySelectorAll(".button"); //Selecting all buttons except clear
+let dot=document.querySelector(".dot");
 function clr() //Clear Function
 {
    math.innerHTML="";
@@ -21,24 +22,28 @@ function add(){
    op="+";
    val1=math.innerHTML;
    math.innerHTML="";
+   dot.disabled=false;
 }
 function subtract(){
    operator.innerHTML="-";
    op="-";
    val1=math.innerHTML;
    math.innerHTML="";
+   dot.disabled=false;
 }
 function multiply(){
    operator.innerHTML="x";
    op="x";
    val1=math.innerHTML;
    math.innerHTML="";
+   dot.disabled=false;
 }
 function divide(){
    operator.innerHTML="÷";
    op="/";
    val1=math.innerHTML;
    math.innerHTML="";
+   dot.disabled=false;
 }
 function btn9(){
    math.innerHTML=math.innerHTML+"9";
@@ -106,4 +111,8 @@ function equal(){
          button.disabled=true;//No more input after result showing
       })
    }
+}
+function decimal(){
+   math.innerHTML=math.innerHTML+".";
+   dot.disabled=true;
 }
