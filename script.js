@@ -1,9 +1,10 @@
 let math=document.querySelector(".math"); //h2 of Screen
 let operator=document.querySelector(".op"); //h2 to display Operator
-let val1; //1st Value
-let val2; //2nd Value
+let val1=""; //1st Value
+let val2=""; //2nd Value
 let op=""; //Operator
-let result;
+let result="";
+let buttons=document.querySelectorAll(".button"); //Selecting all buttons except clear
 function clr() //Clear Function
 {
    math.innerHTML="";
@@ -11,6 +12,9 @@ function clr() //Clear Function
    op="";
    val1="";
    val2="";
+   buttons.forEach(button=>{
+   button.disabled=false;
+   })
 }
 function add(){
    operator.innerHTML="+";
@@ -67,31 +71,39 @@ function btn0(){
    math.innerHTML=math.innerHTML+"0";
 }
 function equal(){
-   val2=math.innerHTML;
-   if(op=="+")
-   {
-      result=parseFloat(val1)+parseFloat(val2);
-      operator.innerHTML="= "+result;
+   if(val1===""){
+      clr();
    }
-   else if(op=="-")
-   {
-      result=parseFloat(val1)-parseFloat(val2);
-      operator.innerHTML="= "+result;
-   }
-   else if(op=="x"){
-      result=parseFloat(val1)*parseFloat(val2);
-      operator.innerHTML="= "+result;
-   }
-   else if(op=="/"){
-      if(parseInt(val2)==0){
-         operator.innerHTML="";
-         alert("Invalid Operation!");
-         clr();
-      }
-      else{
-         result=parseFloat(val1)/parseFloat(val2);
+   else{
+      val2=math.innerHTML;
+      if(op=="+")
+      {
+         result=parseFloat(val1)+parseFloat(val2);
          operator.innerHTML="= "+result;
       }
+      else if(op=="-")
+      {
+         result=parseFloat(val1)-parseFloat(val2);
+         operator.innerHTML="= "+result;
+      }
+      else if(op=="x"){
+         result=parseFloat(val1)*parseFloat(val2);
+         operator.innerHTML="= "+result;
+      }
+      else if(op=="/"){
+         if(parseInt(val2)==0){
+            operator.innerHTML="";
+            alert("Invalid Operation!");
+            clr();
+         }
+         else{
+            result=parseFloat(val1)/parseFloat(val2);
+            operator.innerHTML="= "+result;
+         }
+      }
+      math.innerHTML=val1+op+val2;
+      buttons.forEach(button=>{
+         button.disabled=true;//No more input after result showing
+      })
    }
-   math.innerHTML=val1+op+val2;
 }
