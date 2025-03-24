@@ -53,24 +53,20 @@ h2{
    background-color: bisque;
    width: 22vw;
    height: 36vh;
-   display: flex;
-   flex-direction: column;
-   padding: .2em;
-   border-radius: .5em;
-}
-.row{
-   display: flex;
-   width: 20vw;
-   height: 20vh;
+   display: grid;
+   grid-template-columns: repeat(4,1fr);
+   grid-template-rows: repeat(4,1fr);
+   gap: 0.5vw;
    align-items: center;
-   margin: auto;
-   justify-content: space-between;
+   justify-content: center;
+   border-radius: .5em;
+   padding: 1%;
 }
 button{
-   width: 4.5vw;
+   width: 5vw;
    height: 6vh;
    color: black;
-   font-size: 1.5em;
+   font-size: 150%;
    font-weight: bolder;
    border-radius: .5em;
    display: flex;
